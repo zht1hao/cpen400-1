@@ -10,79 +10,85 @@ function getRandomInt(min, max) {
 
 app.get('/products', function(request, response) {
 
-  var products = {
-    {
-      name : 'KeyboardCombo',
-      price : getRandomInt(25,35),
-      quantity : getRandomInt(0,10),
-      url : 'https://cpen400a.herokuapp.com/images/KeyboardCombo.png'
-    },
-    {
-      name : 'Mice',
-      price : getRandomInt(5,7),
-      quantity : getRandomInt(0,10),
-      url : 'https://cpen400a.herokuapp.com/images/Mice.png'
-    },
-    {
-      name : 'PC1',
-      price : getRandomInt(300,350),
-      quantity : getRandomInt(0,10),
-      url : 'https://cpen400a.herokuapp.com/images/PC1.png'
-    },
-    {
-      name : 'PC2',
-      price : getRandomInt(350,400),
-      quantity : getRandomInt(0,10),
-      url : 'https://cpen400a.herokuapp.com/images/PC2.png'
-    },
-    {
-      name : 'PC3',
-      price : getRandomInt(330,380),
-      quantity : getRandomInt(0,10),
-      url : 'https://cpen400a.herokuapp.com/images/PC3.png'
-    },
-    {
-      name : 'Tent',
-      price : getRandomInt(30,40),
-      quantity : getRandomInt(0,10),
-      url : 'https://cpen400a.herokuapp.com/images/Tent.png'
-    },
-    {
-      name : 'Box1',
-      price : getRandomInt(5,7),
-      quantity : getRandomInt(0,10),
-      url : 'https://cpen400a.herokuapp.com/images/Box1.png'
-    },
-    {
-      name : 'Box2',
-      price : getRandomInt(5,7),
-      quantity : getRandomInt(0,10),
-      url : 'https://cpen400a.herokuapp.com/images/Box2.png'
-    },
-    {
-      name : 'Clothes1',
-      price : getRandomInt(20,30),
-      quantity : getRandomInt(0,10),
-      url : 'https://cpen400a.herokuapp.com/images/Clothes1.png'
-    },
-    {
-      name : 'Clothes2',
-      price : getRandomInt(20,30),
-      quantity : getRandomInt(0,10),
-      url : 'https://cpen400a.herokuapp.com/images/Clothes2.png'
-    },
-    {
-      name : 'Jeans',
-      price : getRandomInt(30,40),
-      quantity : getRandomInt(0,10),
-      url : 'https://cpen400a.herokuapp.com/images/Jeans.png'
-    },
-    {
-      name : 'Keyboard',
-      price : getRandomInt(15,25),
-      quantity : getRandomInt(0,10),
-      url : 'https://cpen400a.herokuapp.com/images/Keyboard.png'
-    },
+  var option = getRandomInt(0,5);
+  if (option < 4) {
+    var products = [
+      {
+        name : 'KeyboardCombo',
+        price : getRandomInt(25,35),
+        quantity : getRandomInt(0,10),
+        url : 'https://cpen400a.herokuapp.com/images/KeyboardCombo.png'
+      },
+      {
+        name : 'Mice',
+        price : getRandomInt(5,7),
+        quantity : getRandomInt(0,10),
+        url : 'https://cpen400a.herokuapp.com/images/Mice.png'
+      },
+      {
+        name : 'PC1',
+        price : getRandomInt(300,350),
+        quantity : getRandomInt(0,10),
+        url : 'https://cpen400a.herokuapp.com/images/PC1.png'
+      },
+      {
+        name : 'PC2',
+        price : getRandomInt(350,400),
+        quantity : getRandomInt(0,10),
+        url : 'https://cpen400a.herokuapp.com/images/PC2.png'
+      },
+      {
+        name : 'PC3',
+        price : getRandomInt(330,380),
+        quantity : getRandomInt(0,10),
+        url : 'https://cpen400a.herokuapp.com/images/PC3.png'
+      },
+      {
+        name : 'Tent',
+        price : getRandomInt(30,40),
+        quantity : getRandomInt(0,10),
+        url : 'https://cpen400a.herokuapp.com/images/Tent.png'
+      },
+      {
+        name : 'Box1',
+        price : getRandomInt(5,7),
+        quantity : getRandomInt(0,10),
+        url : 'https://cpen400a.herokuapp.com/images/Box1.png'
+      },
+      {
+        name : 'Box2',
+        price : getRandomInt(5,7),
+        quantity : getRandomInt(0,10),
+        url : 'https://cpen400a.herokuapp.com/images/Box2.png'
+      },
+      {
+        name : 'Clothes1',
+        price : getRandomInt(20,30),
+        quantity : getRandomInt(0,10),
+        url : 'https://cpen400a.herokuapp.com/images/Clothes1.png'
+      },
+      {
+        name : 'Clothes2',
+        price : getRandomInt(20,30),
+        quantity : getRandomInt(0,10),
+        url : 'https://cpen400a.herokuapp.com/images/Clothes2.png'
+      },
+      {
+        name : 'Jeans',
+        price : getRandomInt(30,40),
+        quantity : getRandomInt(0,10),
+        url : 'https://cpen400a.herokuapp.com/images/Jeans.png'
+      },
+      {
+        name : 'Keyboard',
+        price : getRandomInt(15,25),
+        quantity : getRandomInt(0,10),
+        url : 'https://cpen400a.herokuapp.com/images/Keyboard.png'
+      }
+    ];
+    response.send(products);
+  } else if (option == 4) {
+    response.status(500).send("An error occurred, please try again");
   }
 })
 
