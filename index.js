@@ -74,7 +74,7 @@ app.get('/products', function(request, response) {
         url : 'https://cpen400a.herokuapp.com/images/Keyboard.png'
       }
     };
-    response.send(products);
+    response.json(products);
   } else if (option == 4) {
     response.status(500).send("An error occurred, please try again");
   }
