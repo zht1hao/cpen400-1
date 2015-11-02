@@ -10,6 +10,8 @@ function getRandomInt(min, max) {
 
 app.get('/products', function(request, response) {
 
+  response.header("Access-Control-Allow-Origin", "*");
+  response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   var option = getRandomInt(0,5);
   if (option < 4) {
     var products = {
@@ -74,6 +76,7 @@ app.get('/products', function(request, response) {
         url : 'https://cpen400a.herokuapp.com/images/Keyboard.png'
       }
     };
+
     response.json(products);
   } else if (option == 4) {
     response.status(500).send("An error occurred, please try again");
