@@ -1,4 +1,4 @@
-# node-js-sample
+# CPEN400 Backend Server
 
 A barebones Node.js app using [Express 4](http://expressjs.com/).
 
