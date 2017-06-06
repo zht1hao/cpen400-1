@@ -12,7 +12,7 @@ app.get('/', function(request, response) {
 
   response.header("Access-Control-Allow-Origin", "*");
   response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  var option = getRandomInt(0,5);
+  var option = getRandomInt(0,3);
   if (option < 4) {
     var products = {
       'KeyboardCombo' : {
