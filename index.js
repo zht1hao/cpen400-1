@@ -12,14 +12,14 @@ app.get('/', function(request, response) {
 
   response.header("Access-Control-Allow-Origin", "*");
   response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  var option = getRandomInt(0,5);
+  var option = getRandomInt(0,3);
   if (option < 4) {
     var products = {
       'KeyboardCombo' : {
         price : getRandomInt(25,35),
         quantity : getRandomInt(0,10),
         url : 'https://cpen400a.herokuapp.com/images/KeyboardCombo.png'
-      },
+      }/*,
       'Mice' : {
         price : getRandomInt(5,7),
         quantity : getRandomInt(0,10),
@@ -74,7 +74,7 @@ app.get('/', function(request, response) {
         price : getRandomInt(15,25),
         quantity : getRandomInt(0,10),
         url : 'https://cpen400a.herokuapp.com/images/Keyboard.png'
-      }
+      }*/
     };
 
     response.json(products);
